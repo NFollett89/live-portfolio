@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: license add_music_commit help
+.PHONY: license music help
 
 # Function to add license to the head of a file - Credit: GPT-4
 define add_license
