@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: license music help
+.PHONY: help license memo music
 
 # Function to add license to the head of a file - Credit: GPT-4
 define add_license
@@ -44,6 +44,13 @@ define add_license
 	fi;
 endef
 
+# Function to add a memo to the git history
+define add_memo_commit
+    @read -p "Memo: " memo; \
+	git commit --allow-empty -m "[Memo] $$memo"; \
+	echo "Added memo to git history"
+endef
+
 # Function to add a music commit
 define add_music_commit
 	@read -p "Track title: " title; \
@@ -53,6 +60,9 @@ define add_music_commit
 	echo "Song entry created in git history"
 endef
 
+memo:
+	$(call add_memo_commit)
+
 music:
 	$(call add_music_commit)
 
@@ -61,7 +71,8 @@ license:
 
 help:
 	@echo "Usage:"
-	@echo "  make license file=path/to/your/file    Add license header to the specified file"
-	@echo "  make music                             Prompt for song information and add to git history"
 	@echo "  make help                              Show this help message"
+	@echo "  make license file=path/to/your/file    Add license header to the specified file"
+	@echo "  make memo                              Add a memo to the git history"
+	@echo "  make music                             Prompt for song information and add to git history"
 
