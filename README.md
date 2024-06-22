@@ -1,7 +1,11 @@
 # "Living Portfolio" by Nick Follett
-## Contact
+## 📣 Contact
 - [Linkedin](https://www.linkedin.com/in/nfollett89)
 - nickfollett89@gmail.com
+
+## ⚠️ Disclaimer
+- This repository was created on June 22, 2024 and is very much a work in progress
+- I will remove/modify this disclaimer after cutting a Release following the first 'Major' milestone, e.g. some layered infra serving traffic beyond "Hello, World!"
 
 ## 🎯 Goals
 - Demonstrate a cross-section of my project experience and interests
