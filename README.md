@@ -34,3 +34,7 @@ You are welcome to give me public feedback via [Issues](https://github.com/NFoll
   - C. Misc. custom pipeline
   - D. Just run it locally, I'm one person and have other stuff to do!
 - [ ] Plan more things!
+
+## 💡 Ideas for later...
+- [ ] Pull Spotify tracks from Git history and create a playlist
+    - Any line of a commit message may be `[Music] TITLE, ARTIST, SPOTIFY_TRACK_URL`
