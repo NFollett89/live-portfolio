@@ -14,7 +14,7 @@ You are welcome to give me public feedback via [Issues](https://github.com/NFoll
 (The template is completely [optional](https://github.com/NFollett89/live-portfolio/issues/2))
 
 ## 🚀 Milestones
-- [x] Create the repository, set up branch protections, squash merge, and other configs
+- [x] (June 22, '24) Create the repository, set up branch protections, squash merge, and other configs
 - [x] Choose a [license](LICENSE) and automate its usage ([Makefile](https://github.com/NFollett89/live-portfolio/blob/main/Makefile#L5))
 - [x] Bootstrap a new Google Cloud account in preparation for Terraform (https://github.com/NFollett89/live-portfolio/pull/1)
 - [ ] Set up a Cloud Function, or alternative, to automatically disable the Billing Account when $300 has been spent
