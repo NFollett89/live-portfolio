@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: license
+.PHONY: license add_music_commit help
 
 # Function to add license to the head of a file - Credit: GPT-4
 define add_license
@@ -44,11 +44,24 @@ define add_license
 	fi;
 endef
 
+# Function to add a music commit
+define add_music_commit
+	@read -p "Track title: " title; \
+	read -p "Artist: " artist; \
+	read -p "Spotify URL: " url; \
+	git commit --allow-empty -m "[Music] $$title, $$artist, $$url"; \
+	echo "Song entry created in git history"
+endef
+
+music:
+	$(call add_music_commit)
+
 license:
 	$(call add_license)
 
 help:
 	@echo "Usage:"
 	@echo "  make license file=path/to/your/file    Add license header to the specified file"
+	@echo "  make music                             Prompt for song information and add to git history"
 	@echo "  make help                              Show this help message"
 
