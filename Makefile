@@ -50,5 +50,5 @@ license:
 help:
 	@echo "Usage:"
 	@echo "  make license file=path/to/your/file    Add license header to the specified file"
-	@echo "  make help                             Show this help message"
+	@echo "  make help                              Show this help message"
 
