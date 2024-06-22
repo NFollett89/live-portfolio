@@ -33,6 +33,7 @@ You are welcome to give me public feedback via [Issues](https://github.com/NFoll
   - B. GitHub Actions
   - C. Misc. custom pipeline
   - D. Just run it locally, I'm one person and have other stuff to do!
+- [ ] Add AWS 
 - [ ] Plan more things!
 
 ## 💡 Ideas for later...
