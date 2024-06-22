@@ -8,7 +8,7 @@
 - Fill out an otherwise sparse GitHub Profile
 
 ## Feedback
-You are welcome to open Issues and leave Comments if you would like to let me know something! 😁
+You are welcome to give me public feedback via [Issues](https://github.com/NFollett89/live-portfolio/issues)! 😁
 
 ## Milestones
 - [x] Create the repository, set up branch protections, squash merge, and other configs
