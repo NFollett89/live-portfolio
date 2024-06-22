@@ -12,7 +12,7 @@ You are welcome to give me public feedback via [Issues](https://github.com/NFoll
 
 ## Milestones
 - [x] Create the repository, set up branch protections, squash merge, and other configs
-- [ ] Choose a license and automate its usage
+- [x] Choose a license and automate its usage
 - [x] Bootstrap a new Google Cloud account in preparation for Terraform (https://github.com/NFollett89/live-portfolio/pull/1)
 - [ ] Set up a Cloud Function, or alternative, to automatically disable the Billing Account when $300 has been spent
 - [ ] Create some simple, yet opinionated modules for "Cloud Foundations", and deploy examples of them
