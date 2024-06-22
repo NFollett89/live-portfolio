@@ -11,6 +11,7 @@
 
 ## 📈 Feedback
 You are welcome to give me public feedback via [Issues](https://github.com/NFollett89/live-portfolio/issues)! 😁
+(The template is completely [optional](https://github.com/NFollett89/live-portfolio/issues/2))
 
 ## 🚀 Milestones
 - [x] Create the repository, set up branch protections, squash merge, and other configs
