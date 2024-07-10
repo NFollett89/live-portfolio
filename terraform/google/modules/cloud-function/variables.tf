@@ -51,7 +51,7 @@ variable "entry_point" {
 }
 
 variable "trigger_http" {
-  description = "Whether to allow function execution to be triggered by HTTP. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Cannot be used with event_trigger.
+  description = "Whether to allow function execution to be triggered by HTTP. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Cannot be used with event_trigger."
   type        = bool
   default     = false
 }
