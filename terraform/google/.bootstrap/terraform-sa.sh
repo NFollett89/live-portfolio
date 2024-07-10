@@ -39,11 +39,20 @@ else
 fi
 
 #
-# Give 'roles/editor' to the Service Account
+# Set up IAM
 #
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
   --member="serviceAccount:${SA_EMAIL}" \
   --role="roles/owner" \
+  --quiet >/dev/null
+
+if [[ -z "${BILLING_ACCOUNT_ID}" ]]; then
+    echo "ERROR: Environment variable BILLING_ACCOUNT_ID is unset! export and try again..."
+    exit 1
+fi
+gcloud billing accounts add-iam-policy-binding ${BILLING_ACCOUNT_ID} \
+  --member="serviceAccount:${SA_EMAIL}" \
+  --role="roles/billing.costsManager" \
   --quiet >/dev/null
 
 #
@@ -60,7 +69,7 @@ gcloud iam service-accounts keys create ${KEY_PATH} --iam-account ${SA_EMAIL}
 # Delete old keys
 for key_id in ${key_ids}; do
     echo "Deleting key ID [${key_id}]"
-    gcloud iam service-accounts keys delete "${key_id}" --iam-account "${SA_EMAIL}" --quiet
+    gcloud iam service-accounts keys delete ${key_id} --iam-account ${SA_EMAIL} --quiet
 done
 echo "Old keys deleted successfully"
 

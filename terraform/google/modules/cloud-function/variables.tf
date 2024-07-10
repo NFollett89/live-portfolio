@@ -22,6 +22,11 @@ variable "description" {
   default     = ""
 }
 
+variable "region" {
+  description = "The region where resources will be created."
+  type        = string
+}
+
 variable "available_memory_mb" {
   description = " Memory (in MB), available to the function. Default value is 256. Possible values include 128, 256, 512, 1024, etc"
   type        = number
@@ -43,6 +48,26 @@ variable "entry_point" {
   description = "Name of the function that will be executed when the Google Cloud Function is triggered."
   type        = string
   default     = "main"
+}
+
+variable "trigger_http" {
+  description = "Whether to allow function execution to be triggered by HTTP. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Cannot be used with event_trigger.
+  type        = bool
+  default     = false
+}
+
+variable "event_trigger" {
+  description = "Event trigger configuration for the Google Cloud Function. For details on supported event types, see: https://cloud.google.com/functions/docs/calling/"
+
+  type = object({
+    event_type = string
+    resource   = string
+  })
+
+  default = {
+    event_type = ""
+    resource   = ""
+  }
 }
 
 variable "ingress_settings" {
@@ -93,8 +118,9 @@ variable "bucket_name" {
 }
 
 variable "source_archive_path" {
-  description = "The path within the bucket where the source archive will be stored."
+  description = "The path within the bucket where the source archive will be stored. Will soft default to a path based on the Prooject and Function name."
   type        = string
+  default     = ""
 }
 
 variable "bucket_location" {

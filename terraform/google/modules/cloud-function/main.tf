@@ -1,23 +1,11 @@
 # ==================================================
-# Local Variables
-# ==================================================
-locals {
-  _req_labels = {
-    "handler" : "terraform"
-    "function" : var.name
-  }
-  merged_labels = merge(var.labels, local._req_labels)
-}
-
-
-# ==================================================
 # Optional Dedicated Bucket
 # ==================================================
-resource "google_storage_bucket" "source_archive" {
+resource "google_storage_bucket" "dedicated" {
   count = var.create_dedicated_bucket ? 1 : 0
 
-  project  = var.project
   name     = var.bucket_name
+  project  = var.project
   location = var.bucket_location
   labels   = local.merged_labels
 
@@ -34,8 +22,8 @@ resource "google_storage_bucket" "source_archive" {
 # ==================================================
 resource "google_storage_bucket_object" "archive" {
   name   = "index.zip"
-  bucket = google_storage_bucket.source_archive.0.name # TODO: Use local and swap to correct bucket
-  source = "./path/to/zip/file/which/contains/code"    # TODO
+  bucket = local.dedicated_bucket
+  source = "./path/to/zip/file/which/contains/code" # TODO
 }
 
 # ==================================================
@@ -44,6 +32,7 @@ resource "google_storage_bucket_object" "archive" {
 resource "google_cloudfunctions_function" "function" {
   project     = var.project
   name        = var.name
+  region      = var.region
   runtime     = var.runtime
   entry_point = var.entry_point
   labels      = local.merged_labels
@@ -52,6 +41,6 @@ resource "google_cloudfunctions_function" "function" {
 
   # Google Storage Source
   source_archive_bucket = var.bucket_name
-  source_archive_object = var.source_archive_path
+  source_archive_object = local._default_source_path
 }
 

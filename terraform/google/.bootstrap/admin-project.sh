@@ -47,6 +47,10 @@ if [[ -z "${BILLING_ACCOUNT_ID}" ]]; then
 fi
 gcloud beta billing projects link "${PROJECT_ID}" --billing-account="${BILLING_ACCOUNT_ID}"
 
+#
+# Rename the Billing account so Terraform can look it up as data without the actual ID
+#
+gcloud beta billing accounts update "${BILLING_ACCOUNT_ID}" --display-name="${BILLING_NAME}"
 
 #
 # Set up the centralized Terraform State Bucket
