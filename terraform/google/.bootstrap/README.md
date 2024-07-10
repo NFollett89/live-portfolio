@@ -17,4 +17,5 @@ be one-time and then you move on.
     1. `gcloud projects delete citric-dream-427209-g9`
 1. Run `./terraform-key.sh`
 1. Add export for `GOOGLE_APPLICATION_CREDENTIALS` to `~/.bash_profile`
+1. Manually change the name of the Billing Account to somethign Terraform can look up without the sensitive ID
 
