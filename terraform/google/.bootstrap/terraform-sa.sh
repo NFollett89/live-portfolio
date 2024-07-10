@@ -43,7 +43,7 @@ fi
 #
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
   --member="serviceAccount:${SA_EMAIL}" \
-  --role="roles/editor" \
+  --role="roles/owner" \
   --quiet >/dev/null
 
 #
