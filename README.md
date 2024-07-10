@@ -4,7 +4,7 @@
 - nickfollett89@gmail.com
 
 ## ⚠️ Disclaimer
-- This repository was created on June 22, 2024 and is very much a work in progress
+- This repository was created on June 22, 2024 and is very much a work in progress. Working with Google Cloud requires a lot of [Yak Shaving](https://en.wiktionary.org/wiki/yak_shaving) at first, and as with all things technology "The Devil is in the details".
 - ➡️ [Current draft PR](https://github.com/NFollett89/live-portfolio/pull/4)
 - I will remove/modify this disclaimer after cutting a Release following the first 'Major' milestone, e.g. some layered infra serving traffic beyond "Hello, World!"
 
