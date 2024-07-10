@@ -17,8 +17,13 @@ resource "google_billing_budget" "trial" {
   }
 
   all_updates_rule {
-    pubsub_topic   = data.terraform_remote_state.pubsub.outputs.budget_topic_id
-    schema_version = "1.0"
+    # Notifications for all thresholds, SMS not supported
+    monitoring_notification_channels = [
+      data.terraform_remote_state.monitoring.outputs.email_channel_id,
+    ]
+
+    # The Pub/Sub-triggered Cloud Function will disconnect Billing at 100% spend
+    pubsub_topic = data.terraform_remote_state.pubsub.outputs.budget_topic_id
   }
 
   budget_filter {

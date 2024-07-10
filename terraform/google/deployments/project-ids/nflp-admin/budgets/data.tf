@@ -1,10 +1,20 @@
-# Pull the Pub/Sub Topic name dynamically
+# Pull the Pub/Sub Topic name
 data "terraform_remote_state" "pubsub" {
   backend = "gcs"
 
   config = {
     bucket = "nflp-tfstate"
     prefix = "state/pubsub"
+  }
+}
+
+# Pull the Email Notification channel
+data "terraform_remote_state" "monitoring" {
+  backend = "gcs"
+
+  config = {
+    bucket = "nflp-tfstate"
+    prefix = "state/monitoring"
   }
 }
 
